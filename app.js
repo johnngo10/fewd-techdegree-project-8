@@ -25,10 +25,10 @@ function generateUser(data) {
   for (let i = 0; i < data.length; i++) {
     data[i] = `
     <div class="card">
-      <div>
+      <div class="profile-pic">
         <img src=${data[i].picture.large}>
       </div>
-      <div>
+      <div class="info">
         <h3>${data[i].name.first} ${data[i].name.last}</h3>
         <p>${data[i].email}</p>
         <p>${data[i].location.city}</p>
