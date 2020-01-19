@@ -35,6 +35,7 @@ main .container .card .text-container {
 }
 main .container .card .text-container p {
   padding-top: 10px;
+  color: gray;
 }
 @media (min-width: 768px) {
   main .container {
@@ -54,14 +55,12 @@ main .container .card .text-container p {
   }
 }
 
-body {
+html {
   position: relative;
 }
 
 .overlay {
-  position: absolute;
-  margin: 0;
-  height: 100%;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -88,6 +87,23 @@ body {
   right: 15px;
   top: 5px;
   cursor: pointer;
+  border: none;
+  font-size: 30px;
+  color: grey;
+}
+.modal-content img {
+  border-radius: 50%;
+  padding: 20px;
+}
+.modal-content .text-container {
+  margin: auto 0;
+}
+.modal-content .text-container p {
+  color: gray;
+  padding-top: 10px;
+}
+.modal-content .text-container hr {
+  margin-top: 10px;
 }
 
 /*# sourceMappingURL=styles.css.map */

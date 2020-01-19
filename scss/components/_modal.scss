@@ -1,11 +1,9 @@
-body {
+html {
   position: relative;
 }
 
 .overlay {
-  position: absolute;
-  margin: 0;
-  height: 100%;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -31,5 +29,24 @@ body {
     right: 15px;
     top: 5px;
     cursor: pointer;
+    border: none;
+    font-size: 30px;
+    color: grey;
+  }
+  &-content {
+    & img {
+      border-radius: 50%;
+      padding: 20px;
+    }
+    & .text-container {
+      margin: auto 0;
+      & p {
+        color: gray;
+        padding-top: 10px;
+      }
+      & hr {
+        margin-top: 10px;
+      }
+    }
   }
 }

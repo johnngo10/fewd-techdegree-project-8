@@ -128,8 +128,8 @@ modalClose.addEventListener("click", () => {
 //   modal.style.display = "none";
 // });
 
-window.addEventListener("click", event => {
-  if (event.target == modal) {
-    overlay.classList.add("hidden");
-  }
-});
+// window.addEventListener("click", event => {
+//   if (event.target == modalContainer) {
+//     overlay.classList.add("hidden");
+//   }
+// });
