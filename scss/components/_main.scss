@@ -14,18 +14,46 @@ main {
   margin: 5%;
   & .container {
     & .card {
+      margin: 20px 0;
       display: flex;
       border: 2px solid lightgray;
       border-radius: 5px;
+      text-decoration: none;
+      color: black;
+      &:hover {
+        opacity: 60%;
+        cursor: pointer;
+      }
       & img {
         border-radius: 50%;
         padding: 20px;
+        width: 30%;
       }
-      & .info {
+      & .text-container {
         margin: auto 0;
+        & p {
+          padding-top: 10px;
+        }
       }
     }
   }
   @include mq("med") {
+    & .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      & .card {
+        width: 48%;
+        margin: 20px auto;
+      }
+    }
+  }
+  @include mq("lg") {
+    & .container {
+      & .card {
+        width: 30%;
+        margin: 20px 5px;
+      }
+    }
   }
 }
