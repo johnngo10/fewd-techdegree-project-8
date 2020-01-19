@@ -14,7 +14,8 @@ const modalClose = document.querySelector(".modal-close");
 // FETCH FUNCTIONS
 // ------------------------------
 
-fetch("https://randomuser.me/api/?results=12")
+fetch(`https://randomuser.me/api/?results=12&inc=name, picture,
+email, location, phone, dob &noinfo &nat=US`)
   .then(res => res.json())
   .then(res => res.results)
   .then(displayEmployees)
@@ -73,7 +74,9 @@ function displayModal(index) {
       <p class="address">${city}</p>
       <hr>
       <p>${phone}</p>
-      <p class="address">${street}, ${state} ${postcode}</p>
+      <p class="address">${street.number} ${
+    street.name
+  }, ${state} ${postcode}</p>
       <p>Birthday: ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
     </div>
   `;
@@ -81,25 +84,6 @@ function displayModal(index) {
   overlay.classList.remove("hidden");
   modalContainer.innerHTML = modalHTML;
 }
-
-// function generateUser(data) {
-//   // create user
-//   for (let i = 0; i < data.length; i++) {
-//     data[i] = `
-//     <div href="#" class="card employee">
-//       <div class="profile-pic employee">
-//         <img class="employee" src=${data[i].picture.large}>
-//       </div>
-//       <div class="info employee">
-//         <h3 class="employee">${data[i].name.first} ${data[i].name.last}</h3>
-//         <p class="employee">${data[i].email}</p>
-//         <p class="employee">${data[i].location.city}</p>
-//       </div>
-//     </div>`;
-//   }
-
-//   container.innerHTML = data.join(" ");
-// }
 
 // ------------------------------
 // EVENT LISTENERS
