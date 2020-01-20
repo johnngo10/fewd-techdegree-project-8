@@ -7,8 +7,11 @@ const urlAPI = `https://randomuser.me/api/?results=12&inc=name, picture,
 email, location, phone, dob &noinfo &nat=US`;
 const container = document.querySelector(".container");
 const overlay = document.querySelector(".overlay");
+const myModal = document.getElementById("myModal");
 const modalContainer = document.querySelector(".modal-content");
 const modalClose = document.querySelector(".modal-close");
+const search = document.getElementById("search");
+const card = document.querySelectorAll(".card");
 
 // ------------------------------
 // FETCH FUNCTIONS
@@ -102,18 +105,20 @@ modalClose.addEventListener("click", () => {
   overlay.classList.add("hidden");
 });
 
-// window.addEventListener("click", event => {
-//   if (event.target.classList.contains("employee")) {
-//     modal.style.display = "block";
-//   }
-// });
-
-// closeBtn.addEventListener("click", () => {
-//   modal.style.display = "none";
-// });
-
-// window.addEventListener("click", event => {
-//   if (event.target == modalContainer) {
-//     overlay.classList.add("hidden");
-//   }
-// });
+// filter search
+search.addEventListener("keyup", e => {
+  const searchInput = e.target.value.toLowerCase();
+  const names = document.querySelectorAll(".name");
+  for (let i = 0; i < names.length; i++) {
+    const name = names[i].textContent.toLowerCase();
+    const text = names[i].parentElement;
+    const cards = text.parentElement;
+    if (name.toLowerCase().indexOf(searchInput) > -1) {
+      cards.style.display = "flex";
+      myModal.style.display = "block";
+      modalContainer.style.display = "block";
+    } else {
+      cards.style.display = "none";
+    }
+  }
+});
