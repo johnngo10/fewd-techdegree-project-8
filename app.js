@@ -109,16 +109,21 @@ modalClose.addEventListener("click", () => {
 search.addEventListener("keyup", e => {
   const searchInput = e.target.value.toLowerCase();
   const names = document.querySelectorAll(".name");
+  console.log(searchInput);
   for (let i = 0; i < names.length; i++) {
     const name = names[i].textContent.toLowerCase();
     const text = names[i].parentElement;
     const cards = text.parentElement;
     if (name.toLowerCase().indexOf(searchInput) > -1) {
       cards.style.display = "flex";
-      myModal.style.display = "block";
       modalContainer.style.display = "block";
+      myModal.style.display = "block";
     } else {
       cards.style.display = "none";
+      myModal.style.display = "block";
+      modalContainer.style.display = "block";
     }
   }
 });
+
+//

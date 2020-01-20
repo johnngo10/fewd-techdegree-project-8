@@ -121,6 +121,24 @@ body {
   font-size: 30px;
   color: grey;
 }
+.modal .left-arrow {
+  position: absolute;
+  left: 15px;
+  top: 180px;
+  cursor: pointer;
+  border: none;
+  font-size: 30px;
+  color: grey;
+}
+.modal .right-arrow {
+  position: absolute;
+  right: 15px;
+  top: 180px;
+  cursor: pointer;
+  border: none;
+  font-size: 30px;
+  color: grey;
+}
 .modal-content img {
   border-radius: 50%;
   padding: 20px;
