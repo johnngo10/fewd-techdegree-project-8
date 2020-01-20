@@ -12,6 +12,8 @@ const modalContainer = document.querySelector(".modal-content");
 const modalClose = document.querySelector(".modal-close");
 const search = document.getElementById("search");
 const card = document.querySelectorAll(".card");
+const leftArrow = document.querySelector(".left-arrow");
+const rightArrow = document.querySelector(".right-arrow");
 
 // ------------------------------
 // FETCH FUNCTIONS
@@ -71,7 +73,7 @@ function displayModal(index) {
 
   const modalHTML = `
     <img class="avatar" src="${picture.large}">
-    <div class="text-container">
+    <div class="text-container modal-info" data-index="${index}">
       <h2 class="name">${name.first} ${name.last}</h2>
       <p class="email">${email}</p>
       <p class="address">${city}</p>
@@ -105,7 +107,7 @@ modalClose.addEventListener("click", () => {
   overlay.classList.add("hidden");
 });
 
-// filter search
+// FILTER SEARCH
 search.addEventListener("keyup", e => {
   const searchInput = e.target.value.toLowerCase();
   const names = document.querySelectorAll(".name");
@@ -126,4 +128,21 @@ search.addEventListener("keyup", e => {
   }
 });
 
-//
+// MOVE BACK AND FORTH BETWEEN EMPLOYEES
+leftArrow.addEventListener("click", () => {
+  const modalInfo = document.querySelector(".modal-info");
+  const index = modalInfo.getAttribute("data-index");
+  const prevIndex = parseInt(index) - 1;
+  if (index > 0) {
+    displayModal(prevIndex);
+  }
+});
+
+rightArrow.addEventListener("click", () => {
+  const modalInfo = document.querySelector(".modal-info");
+  const index = modalInfo.getAttribute("data-index");
+  const nextIndex = parseInt(index) + 1;
+  if (index < 12) {
+    displayModal(nextIndex);
+  }
+});
